@@ -7,6 +7,7 @@ import Welcome from './Welcome'
 
 class App extends React.Component {
 
+
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +20,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
-      <Header/>
+      < Header />
         <Switch>
           <Route exact path='/' component={Welcome} />
         </Switch>

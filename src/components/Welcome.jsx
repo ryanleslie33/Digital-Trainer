@@ -18,7 +18,6 @@ class Welcome extends React.Component {
     return (
       <div>
     
-      <p> code until your eyes bleed</p>
       </div>
     );
   }
