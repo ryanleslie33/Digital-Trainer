@@ -40,14 +40,10 @@ function Header(){
     <AppBar style={header} position="static" color="default">
       <Toolbar>
         <Typography   variant="h6" color="inherit">
-        
           <p style={title}><img style={img2} src={rome}/> <img style={img} src={rome}/>Digital Trainer</p>
-          
-        
         </Typography>
       </Toolbar>
     </AppBar>
-
     </div>
   );
 }
