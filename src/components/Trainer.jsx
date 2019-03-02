@@ -33,7 +33,6 @@ let header = {
 let button2 = {
   width:'168px',
   border: '5px solid black',
-  borderRadius: '10px',
   fontSize:'40px',
   borderRadius:'30px',
   position:'relative',
