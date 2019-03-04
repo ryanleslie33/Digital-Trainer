@@ -12,16 +12,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    
+
     };
-  
+
   }
 
 
   render(){
     return (
       <div>
-      < Header />
+      <Header/>
         <Switch>
           <Route exact path='/' component={Welcome} />
             <Route exact path='/trainer' component={Trainer} />

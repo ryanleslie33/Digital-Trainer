@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
-import rome from 'C:/Users/ryan leslie/Desktop/Digital-Trainer/src/assets/images/rome.png'
+import rome from '../assets/images/rome.png'
 
 let img = {
   width: '130px',
