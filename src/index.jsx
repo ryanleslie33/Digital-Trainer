@@ -11,7 +11,7 @@ import thunkMiddleware from 'redux-thunk';
 
 
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(middlewareLogger, thunkMiddleware));
 
   ReactDOM.render(
     <HashRouter>

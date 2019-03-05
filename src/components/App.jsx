@@ -8,8 +8,8 @@ import c from './../constants';
 import { connect } from 'react-redux';
 
 
+let action;
 class App extends React.Component {
-
 
   constructor(props) {
     super(props);

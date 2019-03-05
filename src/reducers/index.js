@@ -3,7 +3,7 @@ import callApiReducer from './callApiReducer';
 import searchApiReducer from './searchApiReducer';
 
 const rootReducer = combineReducers({
-  isFetching: true
+  callApiReducer
 
 });
 

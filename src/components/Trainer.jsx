@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchMuscleGroup } from './../actions';
 
 
 let border =  {
@@ -41,45 +43,56 @@ let button2 = {
   backgroundColor:'grey',
   hover:'20px'
 }
-class Trainer extends React.Component {
 
+const category = "Biceps Curls With Barbell";
+class Trainer extends React.Component {
   constructor(props) {
+
     super(props);
+    this.dispatch = this.props.dispatch
     this.state = {
-    
+
     };
-  
+
   }
 
 
   render(){
     return (
       <div style={page}>
-    <br/>       
-    <br/> 
-    <br/> 
-    <button style={button2} type="text" text='button'>History</button>
+    <br/>
+    <br/>
+    <br/>
+    <button  style={button2} type="text" text='button'>History</button>
     <p style={header}>Workouts</p>
     <div style={border}>
-    <button style={button} type="text" alt="example"/>
+    <button onClick={
+        event => {
+          event.preventDefault();
+          this.dispatch(fetchMuscleGroup(category));
+          console.log("You pressed the button");
+        }
+      } style={button} type="text" alt="example">bicepts</button>
     <button style={button} type="text" placeholder="example"/>
     <button style={button} type="text" placeholder="example"/>
     <button style={button} type="text" placeholder="example"/>
     <button style={button} type="text" placeholder="example"/>
     <button style={button} type="text" placeholder="example"/>
     </div>
-    <br/>       
-    <br/> 
-    <br/> 
-    <br/> 
-    <br/> 
-    <br/> 
-    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
       </div>
     );
   }
 }
 
+// category.propTypes = {  //Added by Robert
+//   dispatch: PropTypes.func  // added by Robert
+// };  //Added by Robert
 
-
-export default Trainer;
+export default connect()(Trainer);
