@@ -10,7 +10,6 @@ let border =  {
   width:'220px',
   height:'400px'
 }
-
 let button =  {
   border: '5px solid black',
   borderRadius: '10px',
@@ -45,17 +44,16 @@ let button2 = {
 }
 
 const category = "Biceps Curls With Barbell";
+
+
+
 class Trainer extends React.Component {
   constructor(props) {
 
     super(props);
     this.dispatch = this.props.dispatch
-    this.state = {
-
-    };
 
   }
-
 
   render(){
     return (
@@ -70,29 +68,45 @@ class Trainer extends React.Component {
         event => {
           event.preventDefault();
           this.dispatch(fetchMuscleGroup(category));
-          console.log("You pressed the button");
+
+          console.log("yoooooo" + this.state.categoryDescription);
         }
       } style={button} type="text" alt="example">bicepts</button>
+
     <button style={button} type="text" placeholder="example"/>
     <button style={button} type="text" placeholder="example"/>
     <button style={button} type="text" placeholder="example"/>
     <button style={button} type="text" placeholder="example"/>
     <button style={button} type="text" placeholder="example"/>
+
     </div>
     <br/>
     <br/>
     <br/>
-    <br/>
-    <br/>
-    <br/>
+    <div>
+      <p>You should see something here:</p>
 
+
+      <hr/>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <p>{"text1"}</p>
+    <p>{"text1"}</p>
       </div>
     );
   }
 }
+const mapStateToProps = state => {
 
-// category.propTypes = {  //Added by Robert
-//   dispatch: PropTypes.func  // added by Robert
-// };  //Added by Robert
+  return {
+    categoryName: state.categoryName,
+    categoryDescription: state.categoryDescription,
+    categoryMuscles: state.categoryMuscles
 
-export default connect()(Trainer);
+  };
+}
+
+
+export default connect(mapStateToProps)(Trainer);

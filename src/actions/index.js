@@ -7,6 +7,12 @@ export const requestCategory = (category, localCategoryId) => ({
   category,
   categoryId: localCategoryId
 });
+export const receiveResults = (categoryName,categoryDescription,categoryMuscles) => ({
+  type: types.RECEIVE_RESULTS,
+  categoryName: categoryName,
+  categoryDescription: categoryDescription,
+  categoryMuscles: categoryMuscles
+});
 export function fetchMuscleGroup(category) {
   console.log(category)
 
@@ -20,9 +26,18 @@ export function fetchMuscleGroup(category) {
     ).then(function(json) {
       console.log("the json is: " , json);
       if (json.results.length ) {
-        const categoryResults = json.results.description;
+        const categoryName = json.results[0].name;
+        const categoryDescription = json.results[0].description;
+        const categoryMuscles = json.results[0].muscles;
+        console.log('categoryName');
+        console.log(categoryName);
+        console.log('categoryDescription');
+        console.log(categoryDescription);
+        console.log('categoryMuscles');
+        console.log(categoryMuscles);
+        dispatch(receiveResults(categoryName,categoryDescription,categoryMuscles));
       } else {
-        console.log('catgeory results: ' +  categoryResults);
+        console.log('catgeory results: ' +  categoryDescription);
         console.log('We couldn\'t locate a song under that ID!');
       }
     });
