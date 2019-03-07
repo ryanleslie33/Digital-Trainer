@@ -6,7 +6,8 @@ import Welcome from './Welcome'
 import Trainer from './Trainer'
 import c from './../constants';
 import { connect } from 'react-redux';
-
+import ApiDisplay from './ApiDisplay';
+import TestDisplay from './TestDisplay';
 
 let action;
 class App extends React.Component {
@@ -28,6 +29,7 @@ class App extends React.Component {
           <Route exact path='/' component={Welcome} />
           <Route path='/trainer' component={Trainer} />
         </Switch>
+      <ApiDisplay/>
       </div>
     );
   }

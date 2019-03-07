@@ -7,11 +7,12 @@ export const requestCategory = (category, localCategoryId) => ({
   category,
   categoryId: localCategoryId
 });
-export const receiveResults = (categoryName,categoryDescription,categoryMuscles) => ({
+export const receiveResults = (categoryName,categoryDescription,categoryMuscles,categoryId) => ({
   type: types.RECEIVE_RESULTS,
   categoryName: categoryName,
   categoryDescription: categoryDescription,
-  categoryMuscles: categoryMuscles
+  categoryMuscles: categoryMuscles,
+  categoryId
 });
 export function fetchMuscleGroup(category) {
   console.log(category)
@@ -25,19 +26,22 @@ export function fetchMuscleGroup(category) {
       error => console.log('An error occurred.', error)
     ).then(function(json) {
       console.log("the json is: " , json);
+
       if (json.results.length ) {
+        let regex1 = /<p>/gi;
+        let regex2 = /<\/p>/gi;
         const categoryName = json.results[0].name;
-        const categoryDescription = json.results[0].description;
-        const categoryMuscles = json.results[0].muscles;
+        const categoryDescription = json.results[0].description.replace(regex1,'').replace(regex2,'');
+        const categoryMuscles = json.results[0].muscles[0].name;
+
         console.log('categoryName');
         console.log(categoryName);
         console.log('categoryDescription');
         console.log(categoryDescription);
         console.log('categoryMuscles');
         console.log(categoryMuscles);
-        dispatch(receiveResults(categoryName,categoryDescription,categoryMuscles));
+        dispatch(receiveResults(categoryName,categoryDescription,categoryMuscles, localCategoryId));
       } else {
-        console.log('catgeory results: ' +  categoryDescription);
         console.log('We couldn\'t locate a song under that ID!');
       }
     });

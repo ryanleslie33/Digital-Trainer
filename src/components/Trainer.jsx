@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMuscleGroup } from './../actions';
 
-
 let border =  {
   border: '20px solid black',
   borderRadius: '10px',
@@ -45,68 +44,61 @@ let button2 = {
 
 const category = "Biceps Curls With Barbell";
 
-
-
 class Trainer extends React.Component {
   constructor(props) {
 
     super(props);
     this.dispatch = this.props.dispatch
-
   }
-
   render(){
+
     return (
       <div style={page}>
-    <br/>
-    <br/>
-    <br/>
-    <button  style={button2} type="text" text='button'>History</button>
-    <p style={header}>Workouts</p>
-    <div style={border}>
-    <button onClick={
-        event => {
-          event.preventDefault();
-          this.dispatch(fetchMuscleGroup(category));
-
-          console.log("yoooooo" + this.state.categoryDescription);
-        }
-      } style={button} type="text" alt="example">bicepts</button>
-
-    <button style={button} type="text" placeholder="example"/>
-    <button style={button} type="text" placeholder="example"/>
-    <button style={button} type="text" placeholder="example"/>
-    <button style={button} type="text" placeholder="example"/>
-    <button style={button} type="text" placeholder="example"/>
-
-    </div>
-    <br/>
-    <br/>
-    <br/>
-    <div>
-      <p>You should see something here:</p>
+        <br/>
+        <br/>
+        <br/>
+        <button  style={button2} type="text" text='button'>History</button>
+        <p style={header}>Workouts</p>
+        <div style={border}>
+          <button onClick={
+              event => {
+                event.preventDefault();
+                this.dispatch(fetchMuscleGroup(category));
 
 
-      <hr/>
-    </div>
-    <br/>
-    <br/>
-    <br/>
-    <p>{"text1"}</p>
-    <p>{"text1"}</p>
-      </div>
-    );
+              }
+            } style={button} type="text" alt="example">bicepts</button>
+
+            <button style={button} type="text" placeholder="example"/>
+            <button style={button} type="text" placeholder="example"/>
+            <button style={button} type="text" placeholder="example"/>
+            <button style={button} type="text" placeholder="example"/>
+            <button style={button} type="text" placeholder="example"/>
+
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <div>
+
+            <hr/>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+        </div>
+      );
+    }
   }
-}
-const mapStateToProps = state => {
+  const mapStateToProps = state => {
 
-  return {
-    categoryName: state.categoryName,
-    categoryDescription: state.categoryDescription,
-    categoryMuscles: state.categoryMuscles
+    return {
+      categoryName: state.categoryName,
+      categoryDescription: state.categoryDescription,
+      categoryMuscles: state.categoryMuscles
 
-  };
-}
+    };
+  }
 
 
-export default connect(mapStateToProps)(Trainer);
+  export default connect(mapStateToProps)(Trainer);
