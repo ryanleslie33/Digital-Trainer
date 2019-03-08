@@ -17,7 +17,8 @@ let border2 =  {
   height:'900px',
   position:'relative',
   left:'350px',
-  top:'-650px'
+  top:'-650px',
+  backgroundColor:'blue'
 }
 let button =  {
   border: '6px solid black',
