@@ -2,20 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMuscleGroup } from './../actions';
+import ApiDisplay from './ApiDisplay';
 
 let border =  {
   border: '20px solid black',
   borderRadius: '10px',
   width:'220px',
-  height:'400px'
+  height:'410px'
+}
+let border2 =  {
+  border: '20px solid black',
+  borderRadius: '10px',
+  width:'800px',
+  height:'900px',
+  position:'relative',
+  left:'350px',
+  top:'-650px'
 }
 let button =  {
-  border: '5px solid black',
-  borderRadius: '10px',
+  border: '6px solid black',
+  borderRadius: '18px',
   width:'210px',
-  height:'50px',
-  padding:'20px',
-  margin:'5px'
+  height:'55px',
+  padding:'30px',
+  margin:'5px',
+  fontSize:'33px',
+  backgroundColor:'grey',
+  fontFamily: 'Times New Roman, Times, serif'
 }
 let page = {
   backgroundColor:'grey',
@@ -54,51 +67,50 @@ class Trainer extends React.Component {
 
     return (
       <div style={page}>
-        <br/>
-        <br/>
-        <br/>
-        <button  style={button2} type="text" text='button'>History</button>
-        <p style={header}>Workouts</p>
-        <div style={border}>
-          <button onClick={
-              event => {
-                event.preventDefault();
-                this.dispatch(fetchMuscleGroup(category));
+      <br/>
+      <br/>
+      <br/>
+      <button  style={button2} type="text" text='button'>History</button>
+      <p style={header}>Workouts</p>
 
+      <div style={border}>
 
-              }
-            } style={button} type="text" alt="example">bicepts</button>
+      <form onClick={
+        event => {
+          event.preventDefault();
+          this.dispatch(fetchMuscleGroup(category));
+        }
+      }>
+      <button style={button} type="text" alt="example">BUILD</button>
+      <button style={button} type="text" alt="example">LOSE</button>
+      <button style={button} type="text" alt="example">ABS AND CORE</button>
+      <button style={button} type="text" alt="example">LEGS</button>
+      <button style={button} type="text" alt="example">CHEST</button>
+      </form>
 
-            <button style={button} type="text" placeholder="example"/>
-            <button style={button} type="text" placeholder="example"/>
-            <button style={button} type="text" placeholder="example"/>
-            <button style={button} type="text" placeholder="example"/>
-            <button style={button} type="text" placeholder="example"/>
+      </div>
+      <div style={border2}>
+      <ApiDisplay/>
+        <p>hello</p>
+      </div>
 
-          </div>
-          <br/>
-          <br/>
-          <br/>
-          <div>
+      <div>
 
-            <hr/>
-          </div>
-          <br/>
-          <br/>
-          <br/>
-        </div>
-      );
-    }
+      <hr/>
+      </div>
+      </div>
+    );
   }
-  const mapStateToProps = state => {
+}
+const mapStateToProps = state => {
 
-    return {
-      categoryName: state.categoryName,
-      categoryDescription: state.categoryDescription,
-      categoryMuscles: state.categoryMuscles
+  return {
+    categoryName: state.categoryName,
+    categoryDescription: state.categoryDescription,
+    categoryMuscles: state.categoryMuscles
 
-    };
-  }
+  };
+}
 
 
-  export default connect(mapStateToProps)(Trainer);
+export default connect(mapStateToProps)(Trainer);
