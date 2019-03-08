@@ -1,3 +1,8 @@
 .DS_STORE
 node_modules
 build
+/exercise.App/exercise.App/obj
+/exercise.App/.vs
+/exercise.App/exercise.App/bin/Debug/netcoreapp2.1
+/exercise.App/exercise.App/wwwroot/lib/bootstrap/dist
+/exercise.App/exercise.App/wwwroot/lib
