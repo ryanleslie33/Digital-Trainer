@@ -56,8 +56,12 @@ let button2 = {
   hover:'20px'
 }
 
-const category = "Biceps Curls With Barbell";
-
+let category = "Biceps Curls With Barbell";
+let abs = "abs"
+let chest = "chest"
+let legs = "legs"
+let build = " build"
+let fat = "fat"
 class Trainer extends React.Component {
   constructor(props) {
 
@@ -75,19 +79,27 @@ class Trainer extends React.Component {
       <p style={header}>Workouts</p>
 
       <div style={border}>
-
-      <form onClick={
+      <button  onClick={
         event => {
-          event.preventDefault();
           this.dispatch(fetchMuscleGroup(category));
-        }
-      }>
-      <button style={button} type="text" alt="example">BUILD</button>
-      <button style={button} type="text" alt="example">LOSE</button>
-      <button style={button} type="text" alt="example">ABS AND CORE</button>
-      <button style={button} type="text" alt="example">LEGS</button>
-      <button style={button} type="text" alt="example">CHEST</button>
-      </form>
+        }}  style={button} type="text" >BUILD</button>
+      <button  onClick={
+        event => {
+          this.dispatch(fetchMuscleGroup(fat));
+        }} style={button} type="text" >LOSE</button>
+      <button  onClick={
+        event => {
+          this.dispatch(fetchMuscleGroup(abs));
+        }} style={button} type="text" >ABS AND CORE</button>
+      <button  onClick={
+        event => {
+          this.dispatch(fetchMuscleGroup(legs));
+        }} style={button} type="text" >LEGS</button>
+      <button onClick={
+        event => {
+          this.dispatch(fetchMuscleGroup(chest));
+        }}  style={button} type="text" >CHEST</button>
+
 
       </div>
       <div style={border2}>
