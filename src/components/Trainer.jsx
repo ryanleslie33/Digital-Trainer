@@ -14,7 +14,7 @@ let border2 =  {
   border: '20px solid black',
   borderRadius: '10px',
   width:'800px',
-  height:'900px',
+  height:'5000px',
   position:'relative',
   left:'350px',
   top:'-650px',
@@ -56,11 +56,11 @@ let button2 = {
   hover:'20px'
 }
 
-let category = "Biceps Curls With Barbell";
+
 let abs = "abs"
 let chest = "chest"
 let legs = "legs"
-let build = " build"
+let muscle = "muscle"
 let fat = "fat"
 class Trainer extends React.Component {
   constructor(props) {
@@ -81,7 +81,7 @@ class Trainer extends React.Component {
       <div style={border}>
       <button  onClick={
         event => {
-          this.dispatch(fetchMuscleGroup(category));
+          this.dispatch(fetchMuscleGroup(muscle));
         }}  style={button} type="text" >BUILD</button>
       <button  onClick={
         event => {
@@ -104,7 +104,7 @@ class Trainer extends React.Component {
       </div>
       <div style={border2}>
       <ApiDisplay/>
-        <p>hello</p>
+
       </div>
 
       <div>

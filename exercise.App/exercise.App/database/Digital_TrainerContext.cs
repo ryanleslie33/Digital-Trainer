@@ -58,6 +58,11 @@ namespace exercise.App.database
                     .HasColumnName("name")
                     .IsUnicode(false);
 
+                entity.Property(e => e.image)
+                   .IsRequired()
+                   .HasColumnName("image")
+                   .IsUnicode(false);
+
                 entity.Property(e => e.Reps)
                     .HasColumnName("reps")
                     .HasColumnType("int(11)");

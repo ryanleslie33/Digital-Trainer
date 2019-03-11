@@ -7,8 +7,6 @@ import Trainer from './Trainer'
 import c from './../constants';
 import { connect } from 'react-redux';
 
-import TestDisplay from './TestDisplay';
-
 let action;
 class App extends React.Component {
 

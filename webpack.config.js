@@ -3,6 +3,7 @@ const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  // loader: 'url-loader',
   // headers: {
   //     'Access-Control-Allow-Origin': '*',
   //     'Access-Control-Allow-Headers': '*',
@@ -61,7 +62,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|gif|jp(e*)g|svg)$/,
+        test: /\.(jpg|png|gif|jp(e*)g|svg)$/,
         use: {
           loader: 'url-loader',
           options: {

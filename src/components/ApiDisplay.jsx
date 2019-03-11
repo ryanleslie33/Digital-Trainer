@@ -7,13 +7,12 @@ const boxStyle = {
   border: "solid black"
 }
 
-
 const ApiDisplay = ({ dispatch, categories }) => {
   console.log("categories inside the const ApiDisplay: " + JSON.stringify(categories))
 
   return categories.results.map(function(category){
     return(<div style={boxStyle}>
-<img src="../assets/images/{category.image}" />
+<img src={"../assets/images/"+category.image}  />
 
 
       <h2> Category: {category.image}</h2>
