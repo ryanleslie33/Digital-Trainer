@@ -13,14 +13,16 @@ const ApiDisplay = ({ dispatch, categories }) => {
 
   return categories.results.map(function(category){
     return(<div style={boxStyle}>
-<img src="assets/images/{category.imagename}" />
+<img src="../assets/images/{category.image}" />
 
-      <h2>{category.name}</h2>
-      <h2>{category.exercise}</h2>
-      <h2>{category.category}</h2>
-      <h2>{category.reps}</h2>
-      <h2>{category.sets}</h2>
-      <h2>{category.days}</h2>
+
+      <h2> Category: {category.image}</h2>
+      <h2> Category: {category.name}</h2>
+      <h2> Name of exercise: {category.exerciseName}</h2>
+      <h2> Category name : {category.category}</h2>
+      <h2> Amount of reps: {category.reps}</h2>
+      <h2>Amount of sets: {category.sets}</h2>
+      <h2> Day: {category.day}</h2>
       </div>
     );
   })

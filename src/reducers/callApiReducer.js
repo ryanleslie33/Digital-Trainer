@@ -23,8 +23,8 @@ let newResultsbyIdStateSlice;
     return newResultsbyIdStateSlice;
     //----------------------------------------------------------
 
-    default: //Added by Robert
-    return initialState;  //Added by Robert
+    default: 
+    return initialState;
   }
 
 
