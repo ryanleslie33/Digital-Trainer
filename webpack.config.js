@@ -3,6 +3,10 @@ const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+    },
 
   entry: [
     'react-hot-loader/patch',
@@ -68,7 +72,7 @@ module.exports = {
       }
     ]
   },
-  
+
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

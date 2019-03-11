@@ -1,8 +1,7 @@
 export const initialState = {
-  results: {
-      categoryName: "",
-      categoryDescription: '',
-      categoryMuscles: "",
-      categoryId: 1
+  results: [ {category: "", name: "", exerciseName: "", sets: 0, reps:0, days:0 }]
+
+
+
+
     }
-}

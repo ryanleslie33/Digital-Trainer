@@ -10,29 +10,23 @@ const boxStyle = {
 
 const ApiDisplay = ({ dispatch, categories }) => {
   console.log("categories inside the const ApiDisplay: " + JSON.stringify(categories))
-  console.log(categories.results.categoryDescription)
-  return(
-    <div style={boxStyle}>
-  
-      <h2>{categories.results.categoryName}</h2>
-      <h3>Muscle used: {categories.results.categoryMuscles}</h3>
-      <p>{categories.results.categoryDescription}</p>
+
+  return categories.results.map(function(category){
+    return(<div style={boxStyle}>
+<img src="assets/images/{category.imagename}" />
+
+      <h2>{category.name}</h2>
+      <h2>{category.exercise}</h2>
+      <h2>{category.category}</h2>
+      <h2>{category.reps}</h2>
+      <h2>{category.sets}</h2>
+      <h2>{category.days}</h2>
+      </div>
+    );
+  })
+}
 
 
-
-
-    </div>
-  )
-};
-
-  ApiDisplay.propTypes = {
-    categories: PropTypes.object,
-    dispatch: PropTypes.func,
-    categoryName: PropTypes.string,
-    categoryDescription: PropTypes.string,
-    categoryMuscles: PropTypes.string,
-    categoryId:PropTypes.number
-  };
 
   const mapStateToProps = state => {
 

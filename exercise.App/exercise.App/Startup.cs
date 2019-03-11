@@ -29,6 +29,14 @@ namespace exercise.App
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
+            }).AddCors(options =>
+            {
+                options.AddPolicy("mycors",
+                builder =>
+                {
+                    builder.WithOrigins("*");
+
+                });
             });
 
 
@@ -51,6 +59,7 @@ namespace exercise.App
             app.UseHttpsRedirection();
             app.UseStaticFiles(); 
             app.UseCookiePolicy();
+            app.UseCors("mycors");
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
