@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMuscleGroup } from './../actions';
 import ApiDisplay from './ApiDisplay';
+import { Link } from 'react-router-dom';
 
 let border =  {
   border: '20px solid black',
@@ -75,8 +76,11 @@ class Trainer extends React.Component {
       <br/>
       <br/>
       <br/>
-      <button  style={button2} type="text" text='button'>History</button>
+      <Link to="/history">
+      <button   style={button2} type="text" >History</button>
+      </Link>
       <p style={header}>Workouts</p>
+
 
       <div style={border}>
       <button  onClick={

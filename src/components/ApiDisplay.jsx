@@ -22,6 +22,7 @@ const ApiDisplay = ({ dispatch, categories }) => {
       <h2> Amount of reps: {category.reps}</h2>
       <h2>Amount of sets: {category.sets}</h2>
       <h2> Day: {category.day}</h2>
+        <h2>Completed:<input type="checkbox"/></h2> 
       </div>
     );
   })

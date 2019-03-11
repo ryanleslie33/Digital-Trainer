@@ -6,6 +6,7 @@ import Welcome from './Welcome'
 import Trainer from './Trainer'
 import c from './../constants';
 import { connect } from 'react-redux';
+import History from './History'
 
 let action;
 class App extends React.Component {
@@ -26,6 +27,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Welcome} />
           <Route path='/trainer' component={Trainer} />
+          <Route path='/history' component={History} />
         </Switch>
 
       </div>
