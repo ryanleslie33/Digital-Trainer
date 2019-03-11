@@ -12,7 +12,7 @@ const ApiDisplay = ({ dispatch, categories }) => {
 
   return categories.results.map(function(category){
     return(<div style={boxStyle}>
-<img src={"../assets/images/"+category.image}  />
+    <img src={"/assets/images/"+category.image}  />
 
 
       <h2> Category: {category.image}</h2>
@@ -22,7 +22,7 @@ const ApiDisplay = ({ dispatch, categories }) => {
       <h2> Amount of reps: {category.reps}</h2>
       <h2>Amount of sets: {category.sets}</h2>
       <h2> Day: {category.day}</h2>
-        <h2>Completed:<input type="checkbox"/></h2> 
+        <h2>Completed:<input type="checkbox"/></h2>
       </div>
     );
   })
