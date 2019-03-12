@@ -14,8 +14,8 @@ let border =  {
 let border2 =  {
   border: '20px solid black',
   borderRadius: '10px',
-  width:'800px',
-  height:'5000px',
+  width:'850px',
+  height:'13500px',
   position:'relative',
   left:'350px',
   top:'-650px',

@@ -6,16 +6,19 @@ import { masterImageList } from '../public/images/masterImageList.js'
 const boxStyle = {
   border: "solid black"
 }
+const masterImage = {
+  border: "solid black",
+  height:'200px',
+  width:'200px'
+}
 
 const ApiDisplay = ({ dispatch, categories }) => {
   console.log("categories inside the const ApiDisplay: " + JSON.stringify(categories))
 
   return categories.results.map(function(category){
     return(<div style={boxStyle}>
-    <img src={masterImageList[category.image]}/>
+    <img style={masterImage} src={masterImageList[category.image]}/>
 
-
-      <h2> Category: {category.image}</h2>
       <h2> Category: {category.name}</h2>
       <h2> Name of exercise: {category.exerciseName}</h2>
       <h2> Category name : {category.category}</h2>
