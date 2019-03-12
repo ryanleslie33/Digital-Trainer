@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { receiveCategory, receiveResults } from './../actions';
-
+import { masterImageList } from '../public/images/masterImageList.js'
 const boxStyle = {
   border: "solid black"
 }
@@ -12,7 +12,7 @@ const ApiDisplay = ({ dispatch, categories }) => {
 
   return categories.results.map(function(category){
     return(<div style={boxStyle}>
-    <img src={"/assets/images/"+category.image}  />
+    <img src={masterImageList[category.image]}/>
 
 
       <h2> Category: {category.image}</h2>

@@ -35,6 +35,9 @@ module.exports = {
   },
 
   module: {
+    loaders: [
+      {test:\/.(png|jpg)$/, loader: 'url-loader?limit=8192')}
+    ]
     rules: [
       {
         test: /\.jsx?$/,
@@ -67,7 +70,8 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 8000,
-            name: 'images/[hash]-[name].[ext]'
+            name: 'images/[hash]-[name].[ext]',
+            publicPath:'/'
           }
         }
       }

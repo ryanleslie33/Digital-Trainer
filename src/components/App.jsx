@@ -7,6 +7,7 @@ import Trainer from './Trainer'
 import c from './../constants';
 import { connect } from 'react-redux';
 import History from './History'
+import masterImageList from '../public/images/masterImageList.js'
 
 let action;
 class App extends React.Component {
