@@ -43,14 +43,18 @@ namespace exercise.App
             }
             
         }
-        public IActionResult Getexercises(string category)
+        public IActionResult resetHistory()
         {
-            List<Exercise> models;
+           
             using (var context = new Digital_TrainerContext())
             {
-                models = context.Exercise.Where(e => e.Category == category).ToList();
+                foreach (var exercise in context.Exercise) {
+                    exercise.LastCompleted = null;
+
+                }
+                context.SaveChanges();
             }
-            return Json(models);
+            return new EmptyResult();
         }
     }
 }
