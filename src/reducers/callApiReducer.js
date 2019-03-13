@@ -4,6 +4,7 @@ const callApiReducer = (state = initialState, action) => {
   let newResultsByIdEntry;
   let newResultsbyIdStateSlice;
   let newHistoryId;
+  let newHistoryReset;
 
   switch (action.type){
 
@@ -11,7 +12,8 @@ const callApiReducer = (state = initialState, action) => {
 
     newResultsByIdEntry = {
       isFectching: false,
-      results: action.results
+      resultsHistory: action.results,
+
 
     }
 

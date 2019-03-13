@@ -14,7 +14,6 @@ const masterImage = {
 }
 
 const ApiDisplay = ({ dispatch, categories }) => {
-  console.log("categories inside the const ApiDisplay: " + JSON.stringify(categories))
 
   return categories.results.map(function(category){
     return(<div style={boxStyle}>
@@ -27,7 +26,8 @@ const ApiDisplay = ({ dispatch, categories }) => {
       <h2>Amount of sets: {category.sets}</h2>
       <h2> Day: {category.day}</h2>
         <h2>Completed:<input onClick={ event => {
-          dispatch(fetchHistory(category.id))
+
+          dispatch(fetchHistory(category))
         }} type="checkbox"/></h2>
       </div>
     );

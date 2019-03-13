@@ -9,25 +9,32 @@ export const receiveResults = (categoryName,categoryId) => ({
 });
 export const receiveHistory = (id,categoryId) => ({
   type: types.RECEIVE_HISTORY,
-  id: categoryName,
+  id: id,
   categoryId
 });
-export function fetchHistory(id) {
-  console.log(id)
+
+
+
+export function fetchHistory(category) {
 
   return function (dispatch) {
-    const localCategoryId = v4();
-      
-    return fetch('http://localhost:53950/home/Gethistory?Id=' + id).then(
+
+
+    return fetch('http://localhost:53950/home/Gethistory?Id=' + category.id).then(
       response => response.json(),
-      error => console.log('An error occurred.', error)
+
     ).then(function(json) {
-      console.log("the json is: " , json);
+
       if (json) {
         for (let item of json){
-          item.lastCompleted = moment(item.lastCompleted);
+          if(category.id = item.lastCompleted){
+            dispatch({results:category.id, type: types.RECEIVE_HISTORY,});
+          }
+
+
+
         }
-        dispatch({results:json, type: types.RECEIVE_HISTORY,});
+
       } else {
         console.log('something wrong!');
       }
