@@ -1,46 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { receiveCategory, receiveResults } from './../actions';
 
-
-let page = {
-  backgroundColor:'grey',
-  textAlign:'center',
-  fontSize:'40px',
-  borderRadius:'30px'
+const boxStyle = {
+  border: "solid black"
 }
-class History extends React.Component {
+const masterImage = {
+  border: "solid black",
+  height:'200px',
+  width:'200px'
+}
 
-  constructor(props) {
-    super(props);
-    this.state = {
+const History = ({ dispatch, categories }) => {
 
-    };
+  return categories.results.map(function(category){
+    return(<div style={boxStyle}>
 
-  }
+  <h2> last Completed workout: {category.lastCompleted.format("MM/DD/YY hh:mm A")}</h2>
+      <h2> Category: {category.name}</h2>
+      <h2> Name of exercise: {category.exerciseName}</h2>
+      <h2> Day: {category.day}</h2>
 
-
-  render(){
-    return (
-      <div style={page}>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
       </div>
     );
-  }
+  })
 }
 
+const mapStateToProps = state => {
 
+  return {
+    categories: state.results
 
-export default History;
+  };
+}
+
+export default connect(mapStateToProps)(History);

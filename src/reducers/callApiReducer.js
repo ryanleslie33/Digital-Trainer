@@ -1,33 +1,41 @@
 import constants from './../constants';
 const { initialState, types } = constants;
-
 const callApiReducer = (state = initialState, action) => {
+  let newResultsByIdEntry;
+  let newResultsbyIdStateSlice;
+  let newHistoryId;
 
-let newResultsByIdEntry;
-let newResultsbyIdStateSlice;
   switch (action.type){
 
-    case types.RECEIVE_RESULTS:
+    case types.RECEIVE_HISTORY:
+
+    newResultsByIdEntry = {
+      isFectching: false,
+      results: action.results
+
+    }
+
+    newHistoryId = Object.assign({}, state,
+      newResultsByIdEntry);
+
+      return newHistoryId;
+
+      case types.RECEIVE_RESULTS:
 
       newResultsByIdEntry = {
         isFectching: false,
-      results: action.results
+        results: action.results
 
       }
 
       newResultsbyIdStateSlice = Object.assign({}, state,
-      newResultsByIdEntry);
+        newResultsByIdEntry);
 
+        return newResultsbyIdStateSlice;
 
+        default:
+        return initialState;
+      }
+    };
 
-    return newResultsbyIdStateSlice;
-    //----------------------------------------------------------
-
-    default: 
-    return initialState;
-  }
-
-
-};
-
-export default callApiReducer;
+    export default callApiReducer;

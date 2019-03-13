@@ -77,7 +77,7 @@ class Trainer extends React.Component {
       <br/>
       <br/>
       <Link to="/history">
-      <button   style={button2} type="text" >History</button>
+      <button  style={button2} type="text" >History</button>
       </Link>
       <p style={header}>Workouts</p>
 

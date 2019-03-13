@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { receiveCategory, receiveResults } from './../actions';
 import { masterImageList } from '../public/images/masterImageList.js'
+import { fetchHistory } from './../actions';
 const boxStyle = {
   border: "solid black"
 }
@@ -25,7 +26,9 @@ const ApiDisplay = ({ dispatch, categories }) => {
       <h2> Amount of reps: {category.reps}</h2>
       <h2>Amount of sets: {category.sets}</h2>
       <h2> Day: {category.day}</h2>
-        <h2>Completed:<input type="checkbox"/></h2>
+        <h2>Completed:<input onClick={ event => {
+          dispatch(fetchHistory(category.id))
+        }} type="checkbox"/></h2>
       </div>
     );
   })
