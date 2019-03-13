@@ -9,8 +9,8 @@ const boxStyle = {
 }
 const masterImage = {
   border: "solid black",
-  height:'200px',
-  width:'200px'
+  height:'250px',
+  width:'250px'
 }
 
 const ApiDisplay = ({ dispatch, categories }) => {

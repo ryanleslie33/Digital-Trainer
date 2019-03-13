@@ -12,7 +12,8 @@ const callApiReducer = (state = initialState, action) => {
 
     newResultsByIdEntry = {
       isFectching: false,
-      resultsHistory: action.results,
+      resultsHistory: action.resultsHistory,
+    
 
 
     }

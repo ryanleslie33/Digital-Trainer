@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { receiveCategory, receiveResults } from './../actions';
-import { deleteHistory } from './../actions';
+import { receiveCategory, receiveResults, fetchHistory } from './../actions';
 import moment from 'moment';
 
 const boxStyle = {
@@ -22,9 +21,9 @@ const History = ({ dispatch, categories }) => {
 
   <h2> last Completed workout: {category.lastCompleted}</h2>
   <h2> last Completed workout: {category.id}</h2>
-      // <h2> Category: {category.name}</h2>
-      // <h2> Name of exercise: {category.exerciseName}</h2>
-      // <h2> Day: {category.day}</h2>
+      <h2> Category: {category.name}</h2>
+      <h2> Name of exercise: {category.exerciseName}</h2>
+      <h2> Day: {category.day}</h2>
 
       </div>
     );

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchMuscleGroup } from './../actions';
 import ApiDisplay from './ApiDisplay';
 import { Link } from 'react-router-dom';
+import space from '../public/images/space.jpg'
 
 let border =  {
   border: '20px solid black',
@@ -33,7 +34,7 @@ let button =  {
   fontFamily: 'Times New Roman, Times, serif'
 }
 let page = {
-  backgroundColor:'grey',
+  backgroundImage:'url(' + space + ')',
   borderRadius:'30px'
 }
 let header = {
@@ -43,7 +44,8 @@ let header = {
   fontSize:'40px',
   borderRadius:'30px',
   position:'relative',
-  left:'50px'
+  left:'50px',
+  backgroundColor:'grey'
 }
 let button2 = {
   width:'168px',

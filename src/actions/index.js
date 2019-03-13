@@ -7,18 +7,17 @@ export const receiveResults = (categoryName,categoryId) => ({
   categoryName: categoryName,
   categoryId
 });
-export const receiveHistory = (id,categoryId) => ({
+export const receiveHistory = (id) => ({
   type: types.RECEIVE_HISTORY,
-  id: id,
-  categoryId
+  results: action.results,
+  id:id
+
+
 });
-
-
 
 export function fetchHistory(category) {
 
   return function (dispatch) {
-
 
     return fetch('http://localhost:53950/home/Gethistory?Id=' + category.id).then(
       response => response.json(),
@@ -28,11 +27,8 @@ export function fetchHistory(category) {
       if (json) {
         for (let item of json){
           if(category.id = item.lastCompleted){
-            dispatch({results:category.id, type: types.RECEIVE_HISTORY,});
+            dispatch({results:json, type: types.RECEIVE_HISTORY,});
           }
-
-
-
         }
 
       } else {
