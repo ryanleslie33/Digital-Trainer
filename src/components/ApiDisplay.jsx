@@ -5,12 +5,16 @@ import { receiveCategory, receiveResults } from './../actions';
 import { masterImageList } from '../public/images/masterImageList.js'
 import { fetchHistory } from './../actions';
 const boxStyle = {
-  border: "solid black"
+  border: "solid black",
+  fontFamily: 'Times New Roman, Times, serif',
+  fontSize:'20px'
 }
 const masterImage = {
   border: "solid black",
-  height:'250px',
-  width:'250px'
+  width:'350px',
+  height:'350px',
+  maxWidth:'100%',
+  maxHeight:'auto'
 }
 
 const ApiDisplay = ({ dispatch, categories }) => {

@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { fetchMuscleGroup } from './../actions';
 import ApiDisplay from './ApiDisplay';
 import { Link } from 'react-router-dom';
-import space from '../public/images/space.jpg'
+import space2 from '../public/images/space2.jpg';
+import space3 from '../public/images/space3.jpg'
 
 let border =  {
   border: '20px solid black',
@@ -15,12 +16,12 @@ let border =  {
 let border2 =  {
   border: '20px solid black',
   borderRadius: '10px',
-  width:'850px',
+  width:'1485px',
   height:'13500px',
   position:'relative',
   left:'350px',
   top:'-650px',
-  backgroundColor:'blue'
+  backgroundImage:'url(' + space3 + ')',
 }
 let button =  {
   border: '6px solid black',
@@ -30,33 +31,34 @@ let button =  {
   padding:'30px',
   margin:'5px',
   fontSize:'33px',
-  backgroundColor:'grey',
+  backgroundImage:'url(' + space3 + ')',
   fontFamily: 'Times New Roman, Times, serif'
 }
 let page = {
-  backgroundImage:'url(' + space + ')',
+  backgroundImage:'url(' + space2 + ')',
   borderRadius:'30px'
 }
 let header = {
   width:'160px',
-  border: '5px solid black',
+  border: '3px solid black',
   borderRadius: '10px',
   fontSize:'40px',
   borderRadius:'30px',
   position:'relative',
   left:'50px',
-  backgroundColor:'grey'
+  backgroundImage:'url(' + space3 + ')',
 }
 let button2 = {
   width:'168px',
-  border: '5px solid black',
+  border: '3px solid black',
   fontSize:'40px',
   borderRadius:'30px',
   position:'relative',
   left:'50px',
   height:'54px',
-  backgroundColor:'grey',
-  hover:'20px'
+  backgroundImage:'url(' + space3 + ')',
+  hover:'20px',
+  fontFamily: 'Times New Roman, Times, serif'
 }
 
 

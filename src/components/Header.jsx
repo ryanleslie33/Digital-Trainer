@@ -5,31 +5,33 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
-import rome from '../public/images/rome.png'
+import rome from '../public/images/rome.png';
+import space3 from '../public/images/space3.jpg'
 
 let img = {
   width: '130px',
   height: '130px',
   position: 'absolute',
-  right: '-170px',
+  right: '-250px',
 }
 let img2 = {
   width: '130px',
   height: '130px',
   position: 'absolute',
-  right: '625px',
+  right: '715px',
 }
 
 let header = {
-  backgroundColor:'blue',
+  backgroundImage:'url(' + space3 + ')',
   height:'180px',
-  borderRadius:'20px'
+  borderRadius:'20px',
+  border:'3px solid black'
 }
 
 let title = {
   fontSize:'100px',
   position:'relative',
-  right:'-300px',
+  right:'-580px',
   fontFamily: 'Times New Roman,Times, serif',
 }
 
