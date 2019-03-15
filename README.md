@@ -5,6 +5,9 @@
 #### By _**Ryan Leslie**_
 
 ## Project Description
+
+* _Application that helps guide a user on what exercises to do what exercises there for specific regions of there body._
+
 ## Name of Student: Ryan Leslie
 ## Name of Project: Digital Trainer
 ## Project’s Purpose or Goal: (Give users a quick and easy guide to learning how to workout without having to hire a personal trainer)
@@ -22,15 +25,9 @@ _Have a functional user-orientated UI_
 * _I'm not sure what else to add because the goal of this app was to keep it minimal and simple and clean and after MVP is done will really focus user-orientation._
 ## _What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?_
 * _AWS_
-* _?_
-* _?_
-## _Is there anything else you’d like your instructor to know?_
-* _I had a couple other ideas but felt this was more completable with such a short amount of time and I wasn't sure if I wanted to use C# or not I have no clue on how to use it with React and would not even need to for this project for the most part other than using it just for practitioner purposes, especially since its been so long since I have used that language._
-
-* _Application that helps guide a user on what exercises to do what exercises there for specific regions of there body._
 
 ## Component Tree
-![image](https://user-images.githubusercontent.com/43968782/53675153-906ec080-3c48-11e9-84f9-8f68ca187fda.png)
+![image](https://user-images.githubusercontent.com/43968782/54402804-b0f83b00-468a-11e9-924d-10735f2292b1.png)
 
 
 ## Setup/Installation Requirements
