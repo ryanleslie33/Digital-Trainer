@@ -6,7 +6,7 @@
 
 ## Project Description
 
-* _Application that helps guide a user on what exercises to do what exercises there for specific regions of there body._
+* _Application that helps guide a user on what exercises to do what exercises there for specific regions of there body. This applications front end is all React with redux, the back end is C# that renders my mySQL data while using Entity Frame Work. When each button is clicked an API call is made from my react component that calls my server to retrieve the information. The data from the database includes information and images on specific one week workout plans and workouts for specific muscle groups. This application also includes a history component that records all your completed workouts and uploads them to the database._
 
 ## Name of Student: Ryan Leslie
 ## Name of Project: Digital Trainer
@@ -61,7 +61,20 @@ $ npm run start
 * _After you run the application it will restore and build all the files and it should take you to localhost:53950_
 
 ## Working Features
-* _To be determined_
+
+* _Home page will be a simple display page with the header and start button that will take you to the main page._
+
+![image](https://user-images.githubusercontent.com/43968782/54403676-2b768a00-468e-11e9-9cad-0ebc9fcf4f1d.png)
+
+* _User can click on list of different types of work-outs on side-bar to receive a list of work outs with images, name of workouts, muscle group, amount of sets, and amount of reps that are recommended for this work out._
+
+![image](https://user-images.githubusercontent.com/43968782/54403762-72fd1600-468e-11e9-9fa5-68db48054f37.png)
+
+* _If a user clicks the Completed checkbox it will send that workout into database with a time stamp attached and will be displayed on the history page._
+* _If a user clicks on the History button they will receive a list of all the workouts that they completed in order of descending._
+
+![image](https://user-images.githubusercontent.com/43968782/54403707-4943ef00-468e-11e9-9d10-035f5b55a0e4.png)
+
 
 ## Known Bugs
 
